@@ -1,0 +1,34 @@
+.cart-form__container {
+}
+
+.cart-form__title {
+  color: #800101;
+  margin-bottom: 1.3rem;
+}
+
+.cart-form__description {
+  width: 38.4rem;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #800101;
+  margin-bottom: 2.5rem;
+}
+
+.cart-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.cart-form__checkout {
+  color: #570101;
+}
+
+.cart-form__title,
+.cart-form__checkout {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.9rem;
+}

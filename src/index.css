@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Light.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  padding: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.flex-center-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+@media screen and (max-width: 1080px) and (min-width: 801px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 1081px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 1640px) and (min-width: 1361px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 1919px) and (min-width: 1641px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,11 @@
+.nav-back {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.nav-back span {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #800101;
+}

@@ -1,0 +1,19 @@
+.control-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control__quantity-number,
+.control {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: #800101;
+  cursor: pointer;
+}
+
+.control:hover {
+  color: rgba(128, 1, 1, 0.5);
+}

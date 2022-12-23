@@ -1,0 +1,40 @@
+.card-form {
+  width: 63.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6.1rem;
+  margin: auto;
+}
+
+.card-form__top-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-form__mid-group {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2rem;
+}
+
+.card-form__icon {
+  width: 27.6rem;
+}
+
+.card-form .btn {
+  width: 26rem;
+  background: #570101;
+  border-radius: 3rem;
+}
+
+.card-form .btn:hover {
+  opacity: 0.8;
+}

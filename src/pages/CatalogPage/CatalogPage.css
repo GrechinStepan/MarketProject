@@ -1,0 +1,21 @@
+.catalog-container {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.catalog {
+  width: 116rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 6rem;
+}
+
+.main-page .catalog-container {
+  margin-top: 0;
+}
