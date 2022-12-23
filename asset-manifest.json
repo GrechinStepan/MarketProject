@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MarketProject/static/css/main.3c7273c3.css",
+    "main.js": "/MarketProject/static/js/main.84503351.js",
+    "static/media/Roboto-Medium.ttf": "/MarketProject/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
+    "static/media/Roboto-Bold.ttf": "/MarketProject/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/Roboto-Light.ttf": "/MarketProject/static/media/Roboto-Light.333da16a3f3cc391d087.ttf",
+    "index.html": "/MarketProject/index.html",
+    "main.3c7273c3.css.map": "/MarketProject/static/css/main.3c7273c3.css.map",
+    "main.84503351.js.map": "/MarketProject/static/js/main.84503351.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c7273c3.css",
+    "static/js/main.84503351.js"
+  ]
+}
