@@ -14,6 +14,7 @@ function MainPage({ store }) {
         changeCategory={(category) => store.setCategory(category)}
         changeSearchName={(searchName) => store.changeSearchName(searchName)}
         searchName={store.searchName}
+        selectedCategory={store.category}
       />
       {store.searchName && store.searchName.length > 0 ? (
         <div className="catalog-container">
@@ -21,6 +22,10 @@ function MainPage({ store }) {
           <Catalog
             addToCart={(index) => store.addCartProduct(index)}
             products={store.productsFiltered}
+            toggleFav={(index) => {
+              store.toggleFavProductIds(index);
+            }}
+            favProductsIds={store.favProductsIds}
           />
         </div>
       ) : (
@@ -30,6 +35,10 @@ function MainPage({ store }) {
           sectionProducts={store.products.filter(
             (product) => product.category === store.category
           )}
+          toggleFav={(index) => {
+            store.toggleFavProductIds(index);
+          }}
+          favProductsIds={store._favProductsIds}
         />
       )}
     </div>

@@ -11,9 +11,12 @@ const tabs = [
   { name: "Пиво", category: "beer", id: 4 },
 ];
 
-function Tabs({ changeCategory, searchName, changeSearchName }) {
-  const [selectedTabIndex, setSelectedTabIndex] = useState(1);
-
+function Tabs({
+  selectedCategory,
+  changeCategory,
+  searchName,
+  changeSearchName,
+}) {
   return (
     <div className="tabs-container">
       <div className="tabs">
@@ -31,11 +34,10 @@ function Tabs({ changeCategory, searchName, changeSearchName }) {
             <Tab
               key={tab.id}
               selectTab={() => {
-                setSelectedTabIndex(tab.id);
                 changeCategory(tab.category);
               }}
               name={tab.name}
-              isSelected={tab.id === selectedTabIndex}
+              isSelected={tab.category === selectedCategory}
             />
           ))}
         </div>

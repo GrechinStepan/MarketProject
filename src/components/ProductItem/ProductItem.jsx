@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { priceStringBuilder } from "../../helpers/stringBuilders";
 import Button from "../Button/Button";
@@ -14,16 +14,22 @@ function ProductItem({
   salePrice,
   parameters,
   category,
-  id,
   addToCart,
+  isFav,
+  toggleFav,
 }) {
   const navigate = useNavigate();
+
   return (
     <div className="product-item__container">
       <div className="product-item__content-group">
         <div className="product-item__top-group">
           <div className="product-item__name">{name}</div>
-          <Like fill={"#800101"} />
+          <Like
+            handleClick={() => toggleFav()}
+            fill={"#800101"}
+            isFav={isFav}
+          />
         </div>
         <div className="product-item__mid-group">
           <img

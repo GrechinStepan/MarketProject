@@ -3,12 +3,14 @@ import productsBase from "./products";
 
 class MarketStore {
   _products = productsBase;
-  _cartProducts = [];
-  _searchName = "";
-  _category = "wine";
+  _cartProducts = JSON.parse(localStorage.getItem("_cartProducts")) || [];
+  _searchName = JSON.parse(localStorage.getItem("_searchName")) || "";
+  _category = JSON.parse(localStorage.getItem("_category")) || "wine";
+  _favProductsIds = JSON.parse(localStorage.getItem("_favProductsIds")) || [];
 
   constructor() {
     makeObservable(this, {
+      _favProductsIds: observable,
       _category: observable,
       _searchName: observable,
       _cartProducts: observable,
@@ -19,12 +21,27 @@ class MarketStore {
       category: computed,
       productsFiltered: computed,
       cartProducts: computed,
+      favProducts: computed,
+      favProductsIds: computed,
       productsQuantity: computed,
+      toggleFavProductIds: action,
       setCategory: action,
       changeSearchName: action,
       addCartProduct: action,
       deleteCartProduct: action,
     });
+  }
+
+  get favProducts() {
+    console.log(this._favProductsIds);
+    return this._products.filter((product) =>
+      this._favProductsIds.includes(product.id)
+    );
+  }
+
+  get favProductsIds() {
+    console.log(this._favProductsIds);
+    return this._favProductsIds;
   }
 
   get resultPrice() {
@@ -87,13 +104,29 @@ class MarketStore {
     return this._searchName;
   }
 
+  toggleFavProductIds(id) {
+    console.log(id);
+    if (!this._favProductsIds.includes(id)) {
+      this._favProductsIds = this._favProductsIds.concat([id]);
+    } else {
+      this._favProductsIds = this._favProductsIds.filter(
+        (productIndex) => productIndex !== id
+      );
+    }
+    localStorage.setItem(
+      "_favProductsIds",
+      JSON.stringify(this._favProductsIds)
+    );
+  }
+
   setCategory(category) {
-    console.log(category);
     this._category = category;
+    localStorage.setItem("_category", JSON.stringify(category));
   }
 
   changeSearchName(searchName) {
     this._searchName = searchName;
+    localStorage.setItem("_searchName", JSON.stringify(searchName));
   }
 
   addCartProduct(index) {
@@ -106,12 +139,12 @@ class MarketStore {
             cartProduct["count"] = 1;
           }
         }
-        console.log(cartProduct);
         return cartProduct;
       });
+      localStorage.setItem("_cartProducts", JSON.stringify(this._cartProducts));
     } else {
-      this._cartProducts.push({ id: index, count: 1 });
-      console.log({ id: index, count: 1 });
+      this._cartProducts = this._cartProducts.concat([{ id: index, count: 1 }]);
+      localStorage.setItem("_cartProducts", JSON.stringify(this._cartProducts));
     }
   }
 
@@ -124,12 +157,14 @@ class MarketStore {
       }
       return cartProduct;
     });
+    localStorage.setItem("_cartProducts", JSON.stringify(this._cartProducts));
   }
 
   clear() {
     this._cartProducts = [];
     this._searchName = "";
     this._category = "wine";
+    localStorage.clear();
   }
 }
 

@@ -26,7 +26,9 @@ function Header({ store }) {
               </span>
             </div>
           </Link>
-          <Like fill={"#ffffff"} />
+          <Link to={"/MarketProject/fav"}>
+            <Like fill={"#ffffff"} handleClick={() => {}} />
+          </Link>
           <Avatar />
         </div>
       </div>

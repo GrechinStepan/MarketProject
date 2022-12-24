@@ -11,9 +11,10 @@ import Header from "./components/Header/Header";
 import CartPage from "./pages/CartPage/CartPage";
 import MainPage from "./pages/MainPage/MainPage";
 import OrderPage from "./pages/OrderPage/OrderPage";
-import { CatalogPage } from "./pages/CatalogPage/CatalogPage";
+import { Catalog, CatalogPage } from "./pages/CatalogPage/CatalogPage";
 
 import "./Market.css";
+import FavPage from "./pages/FavPage/FavPage";
 
 const Market = () => {
   return (
@@ -33,6 +34,10 @@ const Market = () => {
             <Route
               path="/MarketProject/cart"
               element={<CartPage store={marketStore} />}
+            />
+            <Route
+              path="/MarketProject/fav"
+              element={<FavPage store={marketStore} />}
             />
             <Route path="/MarketProject/order" element={<OrderPage />} />
             <Route
